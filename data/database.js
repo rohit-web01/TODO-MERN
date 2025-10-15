@@ -5,8 +5,8 @@ import { User } from "../models/user.js";
 export const connectDB = () => { 
     mongoose.connect(process.env.MONGO_URI, {
         dbName : "TODO_Database",
-    }).then(()=>{
-        console.log("Database connected successfully...");
+    }).then((c)=>{
+        console.log(`Databse Connected with ${c.connection.host}`);
     }).catch(() => {
         console.log("Error occured while connecting database...");
     })
